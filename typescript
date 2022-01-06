@@ -1,0 +1,975 @@
+Script started on 2022-01-06 13:54:39+01:00 [TERM="xterm-256color" TTY="/dev/pts/5" COLUMNS="206" LINES="54"]
+[1m[7m%[27m[1m[0m                                                                                                                                                                                                              ]2;mot@blackshell: ~/PhpstormProjects/assert]1;..ojects/assert]7;file:///home/mot/PhpstormProjects/assert\[0m[27m[24m[J[01;32m➜  [36massert[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=[?2004hggit show | cat[?1l>[?2004l
+]2;git show | cat]1;gitcommit cb70015c04be1baee6f5f5c953703347c0ac1655
+Author: Benjamin Eberlei <kontakt@beberlei.de>
+Date:   Thu Dec 16 22:41:27 2021 +0100
+
+    Run tests on pull_request
+
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 79636e6..7003ff4 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -1,4 +1,4 @@
+-on: push
++on: [push, pull_request]
+ name: CI
+ jobs:
+   tests:
+[1m[7m%[27m[1m[0m                                                                                                                                                                                                              ]2;mot@blackshell: ~/PhpstormProjects/assert]1;..ojects/assert]7;file:///home/mot/PhpstormProjects/assert\[0m[27m[24m[J[01;32m➜  [36massert[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=[?2004hggit --version[?1l>[?2004l
+]2;git --version]1;gitgit version 2.25.1
+[1m[7m%[27m[1m[0m                                                                                                                                                                                                              ]2;mot@blackshell: ~/PhpstormProjects/assert]1;..ojects/assert]7;file:///home/mot/PhpstormProjects/assert\[0m[27m[24m[J[01;32m➜  [36massert[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=[?2004hccomposer update --prefer-stable[?1l>[?2004l
+]2;composer update --prefer-stable]1;composer[32mLoading composer repositories with package information[39m
+                                                      [32mUpdating dependencies[39m
+[32mLock file operations: 62 installs, 0 updates, 0 removals[39m
+  - Locking [32mcomposer/package-versions-deprecated[39m ([33m1.11.99.4[39m)
+  - Locking [32mcomposer/pcre[39m ([33m1.0.0[39m)
+  - Locking [32mcomposer/semver[39m ([33m3.2.7[39m)
+  - Locking [32mcomposer/xdebug-handler[39m ([33m2.0.4[39m)
+  - Locking [32mdoctrine/annotations[39m ([33mv1.4.0[39m)
+  - Locking [32mdoctrine/instantiator[39m ([33m1.0.5[39m)
+  - Locking [32mdoctrine/lexer[39m ([33m1.0.2[39m)
+  - Locking [32mfriendsofphp/php-cs-fixer[39m ([33mv2.19.3[39m)
+  - Locking [32mjean85/pretty-package-versions[39m ([33m1.6.0[39m)
+  - Locking [32mmyclabs/deep-copy[39m ([33m1.7.0[39m)
+  - Locking [32mnette/bootstrap[39m ([33mv2.4.6[39m)
+  - Locking [32mnette/di[39m ([33mv2.4.17[39m)
+  - Locking [32mnette/finder[39m ([33mv2.4.2[39m)
+  - Locking [32mnette/neon[39m ([33mv3.0.1[39m)
+  - Locking [32mnette/php-generator[39m ([33mv3.0.5[39m)
+  - Locking [32mnette/robot-loader[39m ([33mv3.1.3[39m)
+  - Locking [32mnette/utils[39m ([33mv2.5.7[39m)
+  - Locking [32mnikic/php-parser[39m ([33mv3.1.5[39m)
+  - Locking [32mparagonie/random_compat[39m ([33mv9.99.100[39m)
+  - Locking [32mphar-io/manifest[39m ([33m1.0.1[39m)
+  - Locking [32mphar-io/version[39m ([33m1.0.1[39m)
+  - Locking [32mphp-cs-fixer/diff[39m ([33mv1.3.1[39m)
+  - Locking [32mphpdocumentor/reflection-common[39m ([33m1.0.1[39m)
+  - Locking [32mphpdocumentor/reflection-docblock[39m ([33m4.3.4[39m)
+  - Locking [32mphpdocumentor/type-resolver[39m ([33m0.5.1[39m)
+  - Locking [32mphpspec/prophecy[39m ([33mv1.10.3[39m)
+  - Locking [32mphpstan/phpdoc-parser[39m ([33m0.2[39m)
+  - Locking [32mphpstan/phpstan[39m ([33m0.9.3[39m)
+  - Locking [32mphpunit/php-code-coverage[39m ([33m5.3.2[39m)
+  - Locking [32mphpunit/php-file-iterator[39m ([33m1.4.5[39m)
+  - Locking [32mphpunit/php-text-template[39m ([33m1.2.1[39m)
+  - Locking [32mphpunit/php-timer[39m ([33m1.0.9[39m)
+  - Locking [32mphpunit/php-token-stream[39m ([33m2.0.2[39m)
+  - Locking [32mphpunit/phpunit[39m ([33m6.5.14[39m)
+  - Locking [32mphpunit/phpunit-mock-objects[39m ([33m5.0.10[39m)
+  - Locking [32mpsr/log[39m ([33m1.1.4[39m)
+  - Locking [32msebastian/code-unit-reverse-lookup[39m ([33m1.0.2[39m)
+  - Locking [32msebastian/comparator[39m ([33m2.1.3[39m)
+  - Locking [32msebastian/diff[39m ([33m2.0.1[39m)
+  - Locking [32msebastian/environment[39m ([33m3.1.0[39m)
+  - Locking [32msebastian/exporter[39m ([33m3.1.4[39m)
+  - Locking [32msebastian/global-state[39m ([33m2.0.0[39m)
+  - Locking [32msebastian/object-enumerator[39m ([33m3.0.4[39m)
+  - Locking [32msebastian/object-reflector[39m ([33m1.1.2[39m)
+  - Locking [32msebastian/recursion-context[39m ([33m3.0.1[39m)
+  - Locking [32msebastian/resource-operations[39m ([33m1.0.0[39m)
+  - Locking [32msebastian/version[39m ([33m2.0.1[39m)
+  - Locking [32msymfony/console[39m ([33mv3.4.47[39m)
+  - Locking [32msymfony/debug[39m ([33mv3.4.47[39m)
+  - Locking [32msymfony/event-dispatcher[39m ([33mv3.4.47[39m)
+  - Locking [32msymfony/filesystem[39m ([33mv3.4.47[39m)
+  - Locking [32msymfony/finder[39m ([33mv3.4.47[39m)
+  - Locking [32msymfony/options-resolver[39m ([33mv3.4.47[39m)
+  - Locking [32msymfony/polyfill-ctype[39m ([33mv1.19.0[39m)
+  - Locking [32msymfony/polyfill-mbstring[39m ([33mv1.19.0[39m)
+  - Locking [32msymfony/polyfill-php70[39m ([33mv1.19.0[39m)
+  - Locking [32msymfony/polyfill-php72[39m ([33mv1.19.0[39m)
+  - Locking [32msymfony/process[39m ([33mv3.4.47[39m)
+  - Locking [32msymfony/stopwatch[39m ([33mv3.4.47[39m)
+  - Locking [32mtheseer/tokenizer[39m ([33m1.1.3[39m)
+  - Locking [32mwebmozart/assert[39m ([33m1.8.0[39m)
+  - Locking [32myoast/phpunit-polyfills[39m ([33m0.1.0[39m)
+[32mWriting lock file[39m
+[32mInstalling dependencies from lock file (including require-dev)[39m
+[32mPackage operations: 62 installs, 0 updates, 0 removals[39m
+    0 [>---------------------------][2K    0 [>---------------------------][2K    0 [>---------------------------][2K  - Installing [32mcomposer/package-versions-deprecated[39m ([33m1.11.99.4[39m): Extracting archive
+  - Installing [32mcomposer/pcre[39m ([33m1.0.0[39m): Extracting archive
+  - Installing [32mdoctrine/lexer[39m ([33m1.0.2[39m): Extracting archive
+  - Installing [32msymfony/stopwatch[39m ([33mv3.4.47[39m): Extracting archive
+  - Installing [32msymfony/process[39m ([33mv3.4.47[39m): Extracting archive
+  - Installing [32msymfony/polyfill-php72[39m ([33mv1.19.0[39m): Extracting archive
+  - Installing [32mparagonie/random_compat[39m ([33mv9.99.100[39m): Extracting archive
+  - Installing [32msymfony/polyfill-php70[39m ([33mv1.19.0[39m): Extracting archive
+  - Installing [32msymfony/options-resolver[39m ([33mv3.4.47[39m): Extracting archive
+  - Installing [32msymfony/finder[39m ([33mv3.4.47[39m): Extracting archive
+  - Installing [32msymfony/polyfill-ctype[39m ([33mv1.19.0[39m): Extracting archive
+  - Installing [32msymfony/filesystem[39m ([33mv3.4.47[39m): Extracting archive
+  - Installing [32msymfony/event-dispatcher[39m ([33mv3.4.47[39m): Extracting archive
+  - Installing [32msymfony/polyfill-mbstring[39m ([33mv1.19.0[39m): Extracting archive
+  - Installing [32mpsr/log[39m ([33m1.1.4[39m): Extracting archive
+  - Installing [32msymfony/debug[39m ([33mv3.4.47[39m): Extracting archive
+  - Installing [32msymfony/console[39m ([33mv3.4.47[39m): Extracting archive
+  - Installing [32mphp-cs-fixer/diff[39m ([33mv1.3.1[39m): Extracting archive
+  - Installing [32mdoctrine/annotations[39m ([33mv1.4.0[39m): Extracting archive
+  - Installing [32mcomposer/xdebug-handler[39m ([33m2.0.4[39m): Extracting archive
+  - Installing [32mcomposer/semver[39m ([33m3.2.7[39m): Extracting archive
+  - Installing [32mfriendsofphp/php-cs-fixer[39m ([33mv2.19.3[39m): Extracting archive
+  - Installing [32mmyclabs/deep-copy[39m ([33m1.7.0[39m): Extracting archive
+  - Installing [32mnette/utils[39m ([33mv2.5.7[39m): Extracting archive
+  - Installing [32mnette/finder[39m ([33mv2.4.2[39m): Extracting archive
+  - Installing [32mnette/neon[39m ([33mv3.0.1[39m): Extracting archive
+  - Installing [32mnette/php-generator[39m ([33mv3.0.5[39m): Extracting archive
+  - Installing [32mphar-io/version[39m ([33m1.0.1[39m): Extracting archive
+  - Installing [32mphar-io/manifest[39m ([33m1.0.1[39m): Extracting archive
+  - Installing [32mphpdocumentor/reflection-common[39m ([33m1.0.1[39m): Extracting archive
+  - Installing [32mphpdocumentor/type-resolver[39m ([33m0.5.1[39m): Extracting archive
+  - Installing [32msebastian/recursion-context[39m ([33m3.0.1[39m): Extracting archive
+  - Installing [32msebastian/exporter[39m ([33m3.1.4[39m): Extracting archive
+  - Installing [32msebastian/diff[39m ([33m2.0.1[39m): Extracting archive
+  - Installing [32msebastian/comparator[39m ([33m2.1.3[39m): Extracting archive
+  - Installing [32mwebmozart/assert[39m ([33m1.8.0[39m): Extracting archive
+  - Installing [32mphpdocumentor/reflection-docblock[39m ([33m4.3.4[39m): Extracting archive
+  - Installing [32mdoctrine/instantiator[39m ([33m1.0.5[39m): Extracting archive
+  - Installing [32mphpspec/prophecy[39m ([33mv1.10.3[39m): Extracting archive
+  - Installing [32mphpstan/phpdoc-parser[39m ([33m0.2[39m): Extracting archive
+  - Installing [32mnikic/php-parser[39m ([33mv3.1.5[39m): Extracting archive
+  - Installing [32mnette/robot-loader[39m ([33mv3.1.3[39m): Extracting archive
+  - Installing [32mnette/di[39m ([33mv2.4.17[39m): Extracting archive
+  - Installing [32mnette/bootstrap[39m ([33mv2.4.6[39m): Extracting archive
+  - Installing [32mjean85/pretty-package-versions[39m ([33m1.6.0[39m): Extracting archive
+  - Installing [32mphpstan/phpstan[39m ([33m0.9.3[39m): Extracting archive
+  - Installing [32mtheseer/tokenizer[39m ([33m1.1.3[39m): Extracting archive
+  - Installing [32msebastian/version[39m ([33m2.0.1[39m): Extracting archive
+  - Installing [32msebastian/environment[39m ([33m3.1.0[39m): Extracting archive
+  - Installing [32msebastian/code-unit-reverse-lookup[39m ([33m1.0.2[39m): Extracting archive
+  - Installing [32mphpunit/php-token-stream[39m ([33m2.0.2[39m): Extracting archive
+  - Installing [32mphpunit/php-text-template[39m ([33m1.2.1[39m): Extracting archive
+  - Installing [32mphpunit/php-file-iterator[39m ([33m1.4.5[39m): Extracting archive
+  - Installing [32mphpunit/php-code-coverage[39m ([33m5.3.2[39m): Extracting archive
+  - Installing [32mphpunit/php-timer[39m ([33m1.0.9[39m): Extracting archive
+  - Installing [32mphpunit/phpunit-mock-objects[39m ([33m5.0.10[39m): Extracting archive
+  - Installing [32msebastian/global-state[39m ([33m2.0.0[39m): Extracting archive
+  - Installing [32msebastian/object-reflector[39m ([33m1.1.2[39m): Extracting archive
+  - Installing [32msebastian/object-enumerator[39m ([33m3.0.4[39m): Extracting archive
+  - Installing [32msebastian/resource-operations[39m ([33m1.0.0[39m): Extracting archive
+  - Installing [32mphpunit/phpunit[39m ([33m6.5.14[39m): Extracting archive
+  - Installing [32myoast/phpunit-polyfills[39m ([33m0.1.0[39m): Extracting archive
+  0/61 [>---------------------------]   0%[2K 10/61 [====>-----------------------]  16%[2K 29/61 [=============>--------------]  47%[2K 54/61 [========================>---]  88%[2K 61/61 [============================] 100%[2K[32m12 package suggestions were added by new dependencies, use `composer suggest` to see details.[39m
+[30;43mPackage phpunit/php-token-stream is abandoned, you should avoid using it. No replacement was suggested.[39;49m
+[30;43mPackage phpunit/phpunit-mock-objects is abandoned, you should avoid using it. No replacement was suggested.[39;49m
+[32mGenerating autoload files[39m
+[32mcomposer/package-versions-deprecated:[39m Generating version class...
+[32mcomposer/package-versions-deprecated:[39m ...done generating version class
+[32m23 packages you are using are looking for funding.[39m
+[32mUse the `composer fund` command to find out more![39m
+[1m[7m%[27m[1m[0m                                                                                                                                                                                                              ]2;mot@blackshell: ~/PhpstormProjects/assert]1;..ojects/assert]7;file:///home/mot/PhpstormProjects/assert\[0m[27m[24m[J[01;32m➜  [36massert[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=[?2004hccomposer update --prefer-stable[22Dassert:cs-fix         [9D[13Dupdate --prefer-stable[22Dassert:cs-fix         [9D[?1l>[?2004l
+]2;composer assert:cs-fix]1;composer> php-cs-fixer fix . -vvv || true
+[30;43mYou are running PHP CS Fixer v2, which is not maintained anymore. Please update to v3.[39;49m
+[30;43mYou may find an UPGRADE guide at https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/v3.3.0/UPGRADE-v3.md .[39;49m
+[30;43mIf you need help while solving warnings, ask at https://gitter.im/PHP-CS-Fixer, we will help you![39;49m
+
+PHP CS Fixer [32m2.19.3[39m [32mTestament[39m by [33mFabien Potencier[39m and [33mDariusz Ruminski[39m
+Runtime: [32mPHP 7.0.33-57+ubuntu20.04.1+deb.sury.org+1[39m
+Loaded config [33mdefault[39m from "/home/mot/PhpstormProjects/assert/./.php_cs".
+Using cache file "/home/mot/PhpstormProjects/assert/.php_cs.cache".
+[30;43mPaths from configuration file have been overridden by paths provided as command arguments.[39;49m
+[36mS[39m[36mS[39m[36mS[39m[36mS[39m[36mS[39m[36mS[39m[36mS[39m[36mS[39m[32mF[39m[36mS[39m[32mF[39m[36mS[39m[36mS[39m[36mS[39m[36mS[39m[36mS[39m[36mS[39m[36mS[39m[36mS[39m[36mS[39m[36mS[39m[36mS[39m[36mS[39m[36mS[39m[36mS[39m[36mS[39m[36mS[39m[36mS[39m[32mF[39m[32mF[39m
+Legend: ?-unknown, [41mI[49m-invalid file syntax (file ignored), [36mS[39m-skipped (cached or empty file), .-no changes, [32mF[39m-fixed, [41mE[49m-error
+   1) lib/Assert/Assertion.php ([33mno_superfluous_phpdoc_tags, phpdoc_summary, phpdoc_separation, phpdoc_trim, header_comment[39m)
+   2) lib/Assert/LazyAssertion.php ([33mno_superfluous_phpdoc_tags, phpdoc_summary, phpdoc_trim, header_comment[39m)
+   3) tests/Assert/Tests/AssertTest.php ([33mindentation_type, native_function_invocation, phpdoc_summary, no_unused_imports, return_type_declaration, ordered_imports, header_comment[39m)
+   4) tests/bootstrap.php ([33mno_alias_language_construct_call, phpdoc_summary, no_blank_lines_after_phpdoc, header_comment[39m)
+
+Fixed all files in 2.044 seconds, 20.000 MB memory used
+
+[30;43mDetected deprecations in use:[39;49m
+- Configuration file `.php_cs` is deprecated, rename to `.php-cs-fixer.php`.
+- Option "commentType" is deprecated, use "comment_type" instead.
+- PhpCsFixer\Config::create is deprecated since 2.17 and will be removed in 3.0, use the constructor instead.
+- Rule "psr4" is deprecated. Use "psr_autoloading" instead.
+[1m[7m%[27m[1m[0m                                                                                                                                                                                                              ]2;mot@blackshell: ~/PhpstormProjects/assert]1;..ojects/assert]7;file:///home/mot/PhpstormProjects/assert\[0m[27m[24m[J[01;32m➜  [36massert[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=[?2004h## php    ggit checkout issue-contributing[?1l>[?2004l
+]2;git checkout issue-contributing]1;giterror: pathspec 'issue-contributing' did not match any file(s) known to git
+[1m[7m%[27m[1m[0m                                                                                                                                                                                                              ]2;mot@blackshell: ~/PhpstormProjects/assert]1;..ojects/assert]7;file:///home/mot/PhpstormProjects/assert\[0m[27m[24m[J[01;31m➜  [36massert[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=[?2004hgit checkout issue-contributing[12D-issue-contributing[18Dbissue-contributing[18D issue-contributing[18D[?1l>[?2004l
+]2;git checkout -b issue-contributing]1;gitSwitched to a new branch 'issue-contributing'
+[1m[7m%[27m[1m[0m                                                                                                                                                                                                              ]2;mot@blackshell: ~/PhpstormProjects/assert]1;..ojects/assert]7;file:///home/mot/PhpstormProjects/assert\[0m[27m[24m[J[01;32m➜  [36massert[00m [01;34mgit:([31missue-contributing[34m) [33m✗[00m [K[?1h=[?2004hggit diff | cat[?1l>[?2004l
+]2;git diff | cat]1;gitdiff --git a/lib/Assert/Assertion.php b/lib/Assert/Assertion.php
+index 243e64d..450674d 100644
+--- a/lib/Assert/Assertion.php
++++ b/lib/Assert/Assertion.php
+@@ -348,14 +348,11 @@ class Assertion
+      * @param mixed $value
+      * @param mixed $value2
+      * @param string|callable|null $message
+-     * @param string|null $propertyPath
+      *
+      * @psalm-template ExpectedType
+      * @psalm-param ExpectedType $value2
+      * @psalm-assert =ExpectedType $value
+      *
+-     * @return bool
+-     *
+      * @throws AssertionFailedException
+      */
+     public static function same($value, $value2, $message = null, string $propertyPath = null): bool
+@@ -402,14 +399,11 @@ class Assertion
+      * @param mixed $value1
+      * @param mixed $value2
+      * @param string|callable|null $message
+-     * @param string|null $propertyPath
+      *
+      * @psalm-template ExpectedType
+      * @psalm-param ExpectedType $value2
+      * @psalm-assert !=ExpectedType $value1
+      *
+-     * @return bool
+-     *
+      * @throws AssertionFailedException
+      */
+     public static function notSame($value1, $value2, $message = null, string $propertyPath = null): bool
+@@ -453,12 +447,9 @@ class Assertion
+      *
+      * @param mixed $value
+      * @param string|callable|null $message
+-     * @param string|null $propertyPath
+      *
+      * @psalm-assert int $value
+      *
+-     * @return bool
+-     *
+      * @throws AssertionFailedException
+      */
+     public static function integer($value, $message = null, string $propertyPath = null): bool
+@@ -480,12 +471,9 @@ class Assertion
+      *
+      * @param mixed $value
+      * @param string|callable|null $message
+-     * @param string|null $propertyPath
+      *
+      * @psalm-assert float $value
+      *
+-     * @return bool
+-     *
+      * @throws AssertionFailedException
+      */
+     public static function float($value, $message = null, string $propertyPath = null): bool
+@@ -507,12 +495,9 @@ class Assertion
+      *
+      * @param mixed $value
+      * @param string|callable|null $message
+-     * @param string|null $propertyPath
+      *
+      * @psalm-assert =numeric $value
+      *
+-     * @return bool
+-     *
+      * @throws AssertionFailedException
+      */
+     public static function digit($value, $message = null, string $propertyPath = null): bool
+@@ -569,12 +554,9 @@ class Assertion
+      *
+      * @param mixed $value
+      * @param string|callable|null $message
+-     * @param string|null $propertyPath
+      *
+      * @psalm-assert bool $value
+      *
+-     * @return bool
+-     *
+      * @throws AssertionFailedException
+      */
+     public static function boolean($value, $message = null, string $propertyPath = null): bool
+@@ -596,12 +578,9 @@ class Assertion
+      *
+      * @param mixed $value
+      * @param string|callable|null $message
+-     * @param string|null $propertyPath
+      *
+      * @psalm-assert scalar $value
+      *
+-     * @return bool
+-     *
+      * @throws AssertionFailedException
+      */
+     public static function scalar($value, $message = null, string $propertyPath = null): bool
+@@ -623,12 +602,9 @@ class Assertion
+      *
+      * @param mixed $value
+      * @param string|callable|null $message
+-     * @param string|null $propertyPath
+      *
+      * @psalm-assert !empty $value
+      *
+-     * @return bool
+-     *
+      * @throws AssertionFailedException
+      */
+     public static function notEmpty($value, $message = null, string $propertyPath = null): bool
+@@ -650,12 +626,9 @@ class Assertion
+      *
+      * @param mixed $value
+      * @param string|callable|null $message
+-     * @param string|null $propertyPath
+      *
+      * @psalm-assert empty $value
+      *
+-     * @return bool
+-     *
+      * @throws AssertionFailedException
+      */
+     public static function noContent($value, $message = null, string $propertyPath = null): bool
+@@ -677,11 +650,8 @@ class Assertion
+      *
+      * @param mixed $value
+      * @param string|callable|null $message
+-     * @param string|null $propertyPath
+      *
+      * @psalm-assert null $value
+-     *
+-     * @return bool
+      */
+     public static function null($value, $message = null, string $propertyPath = null): bool
+     {
+@@ -702,12 +672,9 @@ class Assertion
+      *
+      * @param mixed $value
+      * @param string|callable|null $message
+-     * @param string|null $propertyPath
+      *
+      * @psalm-assert !null $value
+      *
+-     * @return bool
+-     *
+      * @throws AssertionFailedException
+      */
+     public static function notNull($value, $message = null, string $propertyPath = null): bool
+@@ -729,7 +696,6 @@ class Assertion
+      *
+      * @param mixed $value
+      * @param string|callable|null $message
+-     * @param string|null $propertyPath
+      *
+      * @psalm-assert string $value
+      *
+@@ -758,12 +724,9 @@ class Assertion
+      * @param mixed $value
+      * @param string $pattern
+      * @param string|callable|null $message
+-     * @param string|null $propertyPath
+      *
+      * @psalm-assert =string $value
+      *
+-     * @return bool
+-     *
+      * @throws AssertionFailedException
+      */
+     public static function regex($value, $pattern, $message = null, string $propertyPath = null): bool
+@@ -788,7 +751,6 @@ class Assertion
+      * @param mixed $value
+      * @param string $pattern
+      * @param string|callable|null $message
+-     * @param string|null $propertyPath
+      *
+      * @psalm-assert !=string $value
+      *
+@@ -816,13 +778,10 @@ class Assertion
+      * @param mixed $value
+      * @param int $length
+      * @param string|callable|null $message
+-     * @param string|null $propertyPath
+      * @param string $encoding
+      *
+      * @psalm-assert =string $value
+      *
+-     * @return bool
+-     *
+      * @throws AssertionFailedException
+      */
+     public static function length($value, $length, $message = null, string $propertyPath = null, $encoding = 'utf8'): bool
+@@ -849,13 +808,10 @@ class Assertion
+      * @param mixed $value
+      * @param int $minLength
+      * @param string|callable|null $message
+-     * @param string|null $propertyPath
+      * @param string $encoding
+      *
+      * @psalm-assert =string $value
+      *
+-     * @return bool
+-     *
+      * @throws AssertionFailedException
+      */
+     public static function minLength($value, $minLength, $message = null, string $propertyPath = null, $encoding = 'utf8'): bool
+@@ -882,13 +838,10 @@ class Assertion
+      * @param mixed $value
+      * @param int $maxLength
+      * @param string|callable|null $message
+-     * @param string|null $propertyPath
+      * @param string $encoding
+      *
+      * @psalm-assert =string $value
+      *
+-     * @return bool
+-     *
+      * @throws AssertionFailedException
+      */
+     public static function maxLength($value, $maxLength, $message = null, string $propertyPath = null, $encoding = 'utf8'): bool
+@@ -916,13 +869,10 @@ class Assertion
+      * @param int $minLength
+      * @param int $maxLength
+      * @param string|callable|null $message
+-     * @param string|null $propertyPath
+      * @param string $encoding
+      *
+      * @psalm-assert =string $value
+      *
+-     * @return bool
+-     *
+      * @throws AssertionFailedException
+      */
+     public static function betweenLength($value, $minLength, $maxLength, $message = null, string $propertyPath = null, $encoding = 'utf8'): bool
+@@ -940,13 +890,10 @@ class Assertion
+      * @param mixed $string
+      * @param string $needle
+      * @param string|callable|null $message
+-     * @param string|null $propertyPath
+      * @param string $encoding
+      *
+      * @psalm-assert =string $string
+      *
+-     * @return bool
+-     *
+      * @throws AssertionFailedException
+      */
+     public static function startsWith($string, $needle, $message = null, string $propertyPath = null, $encoding = 'utf8'): bool
+@@ -972,13 +919,10 @@ class Assertion
+      * @param mixed $string
+      * @param string $needle
+      * @param string|callable|null $message
+-     * @param string|null $propertyPath
+      * @param string $encoding
+      *
+      * @psalm-assert =string $string
+      *
+-     * @return bool
+-     *
+      * @throws AssertionFailedException
+      */
+     public static function endsWith($string, $needle, $message = null, string $propertyPath = null, $encoding = 'utf8'): bool
+@@ -1006,13 +950,10 @@ class Assertion
+      * @param mixed $string
+      * @param string $needle
+      * @param string|callable|null $message
+-     * @param string|null $propertyPath
+      * @param string $encoding
+      *
+      * @psalm-assert =string $string
+      *
+-     * @return bool
+-     *
+      * @throws AssertionFailedException
+      */
+     public static function contains($string, $needle, $message = null, string $propertyPath = null, $encoding = 'utf8'): bool
+@@ -1038,13 +979,10 @@ class Assertion
+      * @param mixed $string
+      * @param string $needle
+      * @param string|callable|null $message
+-     * @param string|null $propertyPath
+      * @param string $encoding
+      *
+      * @psalm-assert =string $string
+      *
+-     * @return bool
+-     *
+      * @throws AssertionFailedException
+      */
+     public static function notContains($string, $needle, $message = null, string $propertyPath = null, $encoding = 'utf8'): bool
+@@ -1107,12 +1045,9 @@ class Assertion
+      *
+      * @param mixed $value
+      * @param string|callable|null $message
+-     * @param string|null $propertyPath
+      *
+      * @psalm-assert numeric $value
+      *
+-     * @return bool
+-     *
+      * @throws AssertionFailedException
+      */
+     public static function numeric($value, $message = null, string $propertyPath = null): bool
+@@ -1134,11 +1069,8 @@ class Assertion
+      *
+      * @param mixed $value
+      * @param string|callable|null $message
+-     * @param string|null $propertyPath
+      *
+      * @psalm-assert resource $value
+-     *
+-     * @return bool
+      */
+     public static function isResource($value, $message = null, string $propertyPath = null): bool
+     {
+@@ -1159,12 +1091,9 @@ class Assertion
+      *
+      * @param mixed $value
+      * @param string|callable|null $message
+-     * @param string|null $propertyPath
+      *
+      * @psalm-assert array $value
+      *
+-     * @return bool
+-     *
+      * @throws AssertionFailedException
+      */
+     public static function isArray($value, $message = null, string $propertyPath = null): bool
+@@ -1186,12 +1115,9 @@ class Assertion
+      *
+      * @param mixed $value
+      * @param string|callable|null $message
+-     * @param string|null $propertyPath
+      *
+      * @psalm-assert iterable $value
+      *
+-     * @return bool
+-     *
+      * @throws AssertionFailedException
+      */
+     public static function isTraversable($value, $message = null, string $propertyPath = null): bool
+@@ -1235,12 +1161,9 @@ class Assertion
+      *
+      * @param array|Countable|ResourceBundle|SimpleXMLElement $value
+      * @param string|callable|null $message
+-     * @param string|null $propertyPath
+      *
+      * @psalm-assert countable $value
+      *
+-     * @return bool
+-     *
+      * @throws AssertionFailedException
+      */
+     public static function isCountable($value, $message = null, string $propertyPath = null): bool
+@@ -1407,14 +1330,11 @@ class Assertion
+      * @param mixed $value
+      * @param string $className
+      * @param string|callable|null $message
+-     * @param string|null $propertyPath
+      *
+      * @psalm-template ExpectedType of object
+      * @psalm-param class-string<ExpectedType> $className
+      * @psalm-assert ExpectedType $value
+      *
+-     * @return bool
+-     *
+      * @throws AssertionFailedException
+      */
+     public static function isInstanceOf($value, $className, $message = null, string $propertyPath = null): bool
+@@ -1438,14 +1358,11 @@ class Assertion
+      * @param mixed $value
+      * @param string $className
+      * @param string|callable|null $message
+-     * @param string|null $propertyPath
+      *
+      * @psalm-template ExpectedType of object
+      * @psalm-param class-string<ExpectedType> $className
+      * @psalm-assert !ExpectedType $value
+      *
+-     * @return bool
+-     *
+      * @throws AssertionFailedException
+      */
+     public static function notIsInstanceOf($value, $className, $message = null, string $propertyPath = null): bool
+@@ -1494,12 +1411,9 @@ class Assertion
+      * @param mixed $minValue
+      * @param mixed $maxValue
+      * @param string|callable|null $message
+-     * @param string|null $propertyPath
+      *
+      * @psalm-assert =numeric $value
+      *
+-     * @return bool
+-     *
+      * @throws AssertionFailedException
+      */
+     public static function range($value, $minValue, $maxValue, $message = null, string $propertyPath = null): bool
+@@ -1526,12 +1440,9 @@ class Assertion
+      * @param mixed $value
+      * @param mixed $minValue
+      * @param string|callable|null $message
+-     * @param string|null $propertyPath
+      *
+      * @psalm-assert =numeric $value
+      *
+-     * @return bool
+-     *
+      * @throws AssertionFailedException
+      */
+     public static function min($value, $minValue, $message = null, string $propertyPath = null): bool
+@@ -1557,12 +1468,9 @@ class Assertion
+      * @param mixed $value
+      * @param mixed $maxValue
+      * @param string|callable|null $message
+-     * @param string|null $propertyPath
+      *
+      * @psalm-assert =numeric $value
+      *
+-     * @return bool
+-     *
+      * @throws AssertionFailedException
+      */
+     public static function max($value, $maxValue, $message = null, string $propertyPath = null): bool
+@@ -1684,12 +1592,9 @@ class Assertion
+      *
+      * @param mixed $value
+      * @param string|callable|null $message
+-     * @param string|null $propertyPath
+      *
+      * @psalm-assert =string $value
+      *
+-     * @return bool
+-     *
+      * @throws AssertionFailedException
+      */
+     public static function email($value, $message = null, string $propertyPath = null): bool
+@@ -1715,12 +1620,9 @@ class Assertion
+      *
+      * @param mixed $value
+      * @param string|callable|null $message
+-     * @param string|null $propertyPath
+      *
+      * @psalm-assert =string $value
+      *
+-     * @return bool
+-     *
+      * @throws AssertionFailedException
+      *
+      * @see https://github.com/symfony/Validator/blob/master/Constraints/UrlValidator.php
+@@ -1793,12 +1695,9 @@ class Assertion
+      *
+      * @param mixed $value
+      * @param string|callable|null $message
+-     * @param string|null $propertyPath
+      *
+      * @psalm-assert true $value
+      *
+-     * @return bool
+-     *
+      * @throws AssertionFailedException
+      */
+     public static function true($value, $message = null, string $propertyPath = null): bool
+@@ -1820,12 +1719,9 @@ class Assertion
+      *
+      * @param mixed $value
+      * @param string|callable|null $message
+-     * @param string|null $propertyPath
+      *
+      * @psalm-assert false $value
+      *
+-     * @return bool
+-     *
+      * @throws AssertionFailedException
+      */
+     public static function false($value, $message = null, string $propertyPath = null): bool
+@@ -1847,12 +1743,9 @@ class Assertion
+      *
+      * @param mixed $value
+      * @param string|callable|null $message
+-     * @param string|null $propertyPath
+      *
+      * @psalm-assert class-string $value
+      *
+-     * @return bool
+-     *
+      * @throws AssertionFailedException
+      */
+     public static function classExists($value, $message = null, string $propertyPath = null): bool
+@@ -1874,12 +1767,9 @@ class Assertion
+      *
+      * @param mixed $value
+      * @param string|callable|null $message
+-     * @param string|null $propertyPath
+      *
+      * @psalm-assert class-string $value
+      *
+-     * @return bool
+-     *
+      * @throws AssertionFailedException
+      */
+     public static function interfaceExists($value, $message = null, string $propertyPath = null): bool
+@@ -1940,12 +1830,9 @@ class Assertion
+      *
+      * @param mixed $value
+      * @param string|callable|null $message
+-     * @param string|null $propertyPath
+      *
+      * @psalm-assert =string $value
+      *
+-     * @return bool
+-     *
+      * @throws AssertionFailedException
+      */
+     public static function isJsonString($value, $message = null, string $propertyPath = null): bool
+@@ -2022,9 +1909,6 @@ class Assertion
+      * @param array|Countable|ResourceBundle|SimpleXMLElement $countable
+      * @param int $count
+      * @param string|callable|null $message
+-     * @param string|null $propertyPath
+-     *
+-     * @return bool
+      *
+      * @throws AssertionFailedException
+      */
+@@ -2188,12 +2072,9 @@ class Assertion
+      *
+      * @param mixed $value
+      * @param string|callable|null $message
+-     * @param string|null $propertyPath
+      *
+      * @psalm-assert object $value
+      *
+-     * @return bool
+-     *
+      * @throws AssertionFailedException
+      */
+     public static function isObject($value, $message = null, string $propertyPath = null): bool
+@@ -2556,12 +2437,9 @@ class Assertion
+      *
+      * @param mixed $value
+      * @param string|callable|null $message
+-     * @param string|null $propertyPath
+      *
+      * @psalm-assert callable $value
+      *
+-     * @return bool
+-     *
+      * @throws AssertionFailedException
+      */
+     public static function isCallable($value, $message = null, string $propertyPath = null): bool
+diff --git a/lib/Assert/LazyAssertion.php b/lib/Assert/LazyAssertion.php
+index b305217..1f014cc 100644
+--- a/lib/Assert/LazyAssertion.php
++++ b/lib/Assert/LazyAssertion.php
+@@ -195,8 +195,6 @@ class LazyAssertion
+     }
+ 
+     /**
+-     * @param string $className
+-     *
+      * @return static
+      */
+     public function setAssertClass(string $className): LazyAssertion
+@@ -211,8 +209,6 @@ class LazyAssertion
+     }
+ 
+     /**
+-     * @param string $className
+-     *
+      * @return static
+      */
+     public function setExceptionClass(string $className): LazyAssertion
+diff --git a/tests/Assert/Tests/AssertTest.php b/tests/Assert/Tests/AssertTest.php
+index 849d644..9b4f4db 100644
+--- a/tests/Assert/Tests/AssertTest.php
++++ b/tests/Assert/Tests/AssertTest.php
+@@ -14,8 +14,8 @@
+ 
+ namespace Assert\Tests;
+ 
+-use ArrayObject;
+ use ArrayIterator;
++use ArrayObject;
+ use Assert\Assertion;
+ use Assert\AssertionFailedException;
+ use Assert\Tests\Fixtures\CustomAssertion;
+@@ -28,17 +28,8 @@ use ResourceBundle;
+ use SimpleXMLElement;
+ use SplObserver;
+ use stdClass;
+-use Yoast\PHPUnitPolyfills\TestCases\TestCase;
+ use Traversable;
+-use function base64_encode;
+-use function extension_loaded;
+-use function fopen;
+-use function is_bool;
+-use function is_null;
+-use function json_encode;
+-use function range;
+-use function str_repeat;
+-use function sys_get_temp_dir;
++use Yoast\PHPUnitPolyfills\TestCases\TestCase;
+ 
+ class AssertTest extends TestCase
+ {
+@@ -144,7 +135,7 @@ class AssertTest extends TestCase
+             'A null' => [null],
+             'A float in a string' => ['1.23'],
+             'A negative float in a string' => ['-1.23'],
+-            'A file pointer' => [fopen(__FILE__, 'r')],
++            'A file pointer' => [\fopen(__FILE__, 'r')],
+             'A float in a string with a leading space' => [' 1.23'],
+             'An integer in a string with a leading space' => [' 123'],
+             'A negative integer in a string with a leading space' => [' -123'],
+@@ -540,7 +531,7 @@ class AssertTest extends TestCase
+             [1],
+             [1.23],
+             [new stdClass()],
+-            [fopen('php://memory', 'r')],
++            [\fopen('php://memory', 'r')],
+         ];
+     }
+ 
+@@ -980,10 +971,10 @@ class AssertTest extends TestCase
+     {
+         $this->expectException('Assert\AssertionFailedException');
+         $this->expectExceptionCode(\Assert\Assertion::INVALID_VALUE_IN_ARRAY);
+-        $this->assertTrue(Assertion::notInArray(6, range(1, 5)));
+-        $this->assertTrue(Assertion::notInArray('a', range('b', 'z')));
++        $this->assertTrue(Assertion::notInArray(6, \range(1, 5)));
++        $this->assertTrue(Assertion::notInArray('a', \range('b', 'z')));
+ 
+-        Assertion::notInArray(1, range(1, 5));
++        Assertion::notInArray(1, \range(1, 5));
+     }
+ 
+     public function testMin()
+@@ -1142,7 +1133,7 @@ class AssertTest extends TestCase
+     {
+         $this->expectException('Assert\AssertionFailedException');
+         $this->expectExceptionCode(\Assert\Assertion::INVALID_WRITEABLE);
+-        $this->assertTrue(Assertion::writeable(sys_get_temp_dir()));
++        $this->assertTrue(Assertion::writeable(\sys_get_temp_dir()));
+ 
+         Assertion::writeable(__DIR__.'/does-not-exist');
+     }
+@@ -1197,8 +1188,8 @@ class AssertTest extends TestCase
+     public function isJsonStringDataprovider(): array
+     {
+         return [
+-            '»null« value' => [json_encode(null)],
+-            '»false« value' => [json_encode(false)],
++            '»null« value' => [\json_encode(null)],
++            '»false« value' => [\json_encode(false)],
+             'array value' => ['["false"]'],
+             'object value' => ['{"tux":"false"}'],
+         ];
+@@ -1427,7 +1418,7 @@ class AssertTest extends TestCase
+         yield '2 elements while at least 3 expected' => [['Hi', 'There'], 3];
+         yield '1 countable while at least 2 expected' => [new Fixtures\OneCountable(), 2];
+         yield '2 countable while at least 3 expected' => [new SimpleXMLElement('<a><b /><c /></a>'), 3];
+-        if (extension_loaded('intl')) {
++        if (\extension_loaded('intl')) {
+             yield '6 countable while at least 7 expected' => [new ResourceBundle('en_US', __DIR__.'/_files/ResourceBundle'), 7];
+         }
+     }
+@@ -1467,7 +1458,7 @@ class AssertTest extends TestCase
+         yield '2 elements while at most 1 expected' => [['Hi', 'There'], 1];
+         yield '1 countable while at most 0 expected' => [new Fixtures\OneCountable(), 0];
+         yield '2 countable while at most 1 expected' => [new SimpleXMLElement('<a><b /><c /></a>'), 1];
+-        if (extension_loaded('intl')) {
++        if (\extension_loaded('intl')) {
+             yield '6 countable while at most 5 expected' => [new ResourceBundle('en_US', __DIR__.'/_files/ResourceBundle'), 5];
+         }
+     }
+@@ -1797,7 +1788,7 @@ class AssertTest extends TestCase
+         Assertion::satisfy(
+             null,
+             function ($value): bool {
+-                return !is_null($value);
++                return !\is_null($value);
+             }
+         );
+     }
+@@ -1808,8 +1799,8 @@ class AssertTest extends TestCase
+         $this->assertTrue(
+             Assertion::satisfy(
+                 null,
+-                function ($value) : bool {
+-                    return is_null($value);
++                function ($value): bool {
++                    return \is_null($value);
+                 }
+             )
+         );
+@@ -1822,7 +1813,7 @@ class AssertTest extends TestCase
+                  * @return bool|void
+                  */
+                 function ($value) {
+-                    if (!is_bool($value)) {
++                    if (!\is_bool($value)) {
+                         return false;
+                     }
+                 }
+@@ -2014,18 +2005,18 @@ class AssertTest extends TestCase
+         $this->expectException('Assert\AssertionFailedException');
+         $this->expectExceptionCode(\Assert\Assertion::INVALID_FLOAT);
+ 
+-        $string = str_repeat('1234567890', 11);
++        $string = \str_repeat('1234567890', 11);
+ 
+         $this->assertTrue(Assertion::float($string));
+     }
+ 
+     public function testStringifyTruncatesStringValuesLongerThan100CharactersAppropriatelyAndIsMultibyteValid()
+     {
+-	    $this->expectException('Assert\AssertionFailedException');
+-	    $this->expectExceptionCode(\Assert\Assertion::INVALID_FLOAT);
+-	    $this->expectExceptionMessage('ငါကနံပါတ်မဟုတ်ဘူးငါကနံပါတ်မဟုတ်ဘူးငါကနံပါတ်မဟုတ်ဘူးငါကနံပါတ်မဟုတ်ဘူးငါကနံပါတ်မဟုတ်ဘူးငါကနံပါတ်မဟု...');
++        $this->expectException('Assert\AssertionFailedException');
++        $this->expectExceptionCode(\Assert\Assertion::INVALID_FLOAT);
++        $this->expectExceptionMessage('ငါကနံပါတ်မဟုတ်ဘူးငါကနံပါတ်မဟုတ်ဘူးငါကနံပါတ်မဟုတ်ဘူးငါကနံပါတ်မဟုတ်ဘူးငါကနံပါတ်မဟုတ်ဘူးငါကနံပါတ်မဟု...');
+ 
+-        $string = str_repeat('ငါကနံပါတ်မဟုတ်ဘူး', 11);
++        $string = \str_repeat('ငါကနံပါတ်မဟုတ်ဘူး', 11);
+ 
+         $this->assertTrue(Assertion::float($string));
+     }
+@@ -2035,7 +2026,7 @@ class AssertTest extends TestCase
+         $this->expectException('Assert\AssertionFailedException');
+         $this->expectExceptionCode(\Assert\Assertion::INVALID_FLOAT);
+         $this->expectExceptionMessage('stream');
+-        $this->assertTrue(Assertion::float(fopen('php://stdin', 'rb')));
++        $this->assertTrue(Assertion::float(\fopen('php://stdin', 'rb')));
+     }
+ 
+     public function testExtensionLoaded()
+@@ -2161,7 +2152,7 @@ class AssertTest extends TestCase
+ 
+     public function testBase64()
+     {
+-        $base64String = base64_encode('content');
++        $base64String = \base64_encode('content');
+ 
+         $this->assertTrue(Assertion::base64($base64String));
+     }
+diff --git a/tests/bootstrap.php b/tests/bootstrap.php
+index de8fea9..cd6e608 100644
+--- a/tests/bootstrap.php
++++ b/tests/bootstrap.php
+@@ -14,7 +14,7 @@
+ 
+ $loader = @include __DIR__.'/../vendor/autoload.php';
+ if (!$loader) {
+-    die(
++    exit(
+     <<<'EOT'
+ You must set up the project dependencies, run the following commands:
+ 
+[1m[7m%[27m[1m[0m                                                                                                                                                                                                              ]2;mot@blackshell: ~/PhpstormProjects/assert]1;..ojects/assert]7;file:///home/mot/PhpstormProjects/assert\[0m[27m[24m[J[01;32m➜  [36massert[00m [01;34mgit:([31missue-contributing[34m) [33m✗[00m [K[?1h=[?2004hggit  g  ggst[?1l>[?2004l
+]2;git status]1;gstOn branch issue-contributing
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   lib/Assert/Assertion.php[m
+	[31mmodified:   lib/Assert/LazyAssertion.php[m
+	[31mmodified:   tests/Assert/Tests/AssertTest.php[m
+	[31mmodified:   tests/bootstrap.php[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31mtime.txt[m
+	[31mtypescript[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[1m[7m%[27m[1m[0m                                                                                                                                                                                                              ]2;mot@blackshell: ~/PhpstormProjects/assert]1;..ojects/assert]7;file:///home/mot/PhpstormProjects/assert\[0m[27m[24m[J[01;32m➜  [36massert[00m [01;34mgit:([31missue-contributing[34m) [33m✗[00m [K[?1h=[?2004hggit a dd lib tests[?1l>[?2004l
+]2;git add lib tests]1;git[1m[7m%[27m[1m[0m                                                                                                                                                                                                              ]2;mot@blackshell: ~/PhpstormProjects/assert]1;..ojects/assert]7;file:///home/mot/PhpstormProjects/assert\[0m[27m[24m[J[01;32m➜  [36massert[00m [01;34mgit:([31missue-contributing[34m) [33m✗[00m [K[?1h=[?2004hggit commit -m "issue contributing [?1l>[?2004l
+[0m[27m[24m[Jdquote> [K[?1h=[?2004h[?1l>[?2004l
+[0m[27m[24m[Jdquote> [K[?1h=[?2004haafter running composer assert:cs-fix in contributing 2. bulletbullet [?1l>[?2004l
+[0m[27m[24m[Jdquote> [K[?1h=[?2004h"[?1l>[?2004l
+]2;git commit -m ]1;git[issue-contributing 96d4321] issue contributing
+ 4 files changed, 24 insertions(+), 159 deletions(-)
+[1m[7m%[27m[1m[0m                                                                                                                                                                                                              ]2;mot@blackshell: ~/PhpstormProjects/assert]1;..ojects/assert]7;file:///home/mot/PhpstormProjects/assert\[0m[27m[24m[J[01;32m➜  [36massert[00m [01;34mgit:([31missue-contributing[34m) [33m✗[00m [K[?1h=[?2004heexit  e  ggit push     g  ggit  g  eexit[?1l>[?2004l
+]2;exit]1;exit
+Script done on 2022-01-06 13:57:09+01:00 [COMMAND_EXIT_CODE="0"]
